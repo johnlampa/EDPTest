@@ -1,18 +1,12 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState} from 'react'
 import EmployeeTable from './components/EmployeeTable.jsx';
 import ButtonContainer from './components/ButtonContainer.jsx';
+import AddEmployee from './components/AddEmployee.jsx';
 
 function App() {
-  const [data, setData] = useState([])
-  useEffect(()=>{
-    fetch('http://localhost:8081/department')
-    .then(res => res.json())
-    .then(data => setData(data))
-    .catch(err => console.log(err));
-  }, [])
-
   //source should be database
-  const employeesArray = [{
+  const [employees, setEmployees] = useState([{
     employeeNo: '320',
     name: 'jkrl',
     contact: '0922',
@@ -30,7 +24,15 @@ function App() {
     employeeType: 'part-time',
     status: 'active',
     department: 'it',
-  }]
+  }]);
+
+  const [data, setData] = useState([])
+  useEffect(()=>{
+    fetch('http://localhost:8081/department')
+    .then(res => res.json())
+    .then(data => setData(data))
+    .catch(err => console.log(err));
+  }, [])
 
   return(
     <>
@@ -52,10 +54,16 @@ function App() {
           </tbody>
         </table>
       </div>
-      <div className='table-button-container'>
-        <EmployeeTable employees={employeesArray}/>
-        <ButtonContainer />
+      <div className='default-container'>
+        <div className='table-button-container'>
+          <EmployeeTable employees={employees} setEmployees={setEmployees}/>
+          <ButtonContainer />
+        </div>
+        <div className='default-container'>
+          <AddEmployee></AddEmployee>
+        </div>
       </div>
+      
       
     </>
     

@@ -31,10 +31,33 @@ table, th, td {
   text-align: center;
 }
 
+.default-container {
+  width: max-content;
+  justify-content: center;
+}
+
 .button-container {
   display: flex;
   justify-content: space-between;
   width: 55%;
   margin-left: 22.5%;
   margin-top: 20px;
+}
+
+.add-employee-container {
+  padding: 10px;
+  margin-top: 50px;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+
+.flex {
+  display: flex;
+  column-gap: 20px;
+}
+
+.left-align {
+  text-align: left;
 }
