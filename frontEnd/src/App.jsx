@@ -10,6 +10,28 @@ function App() {
     .then(data => setData(data))
     .catch(err => console.log(err));
   }, [])
+
+  //source should be database
+  const employeesArray = [{
+    employeeNo: '320',
+    name: 'jkrl',
+    contact: '0922',
+    address: 'mandug',
+    designation: 'mngr',
+    employeeType: 'regular',
+    status: 'active',
+    department: 'hr',
+  }, {
+    employeeNo: '320',
+    name: 'adgr',
+    contact: '0928',
+    address: 'quirino',
+    designation: 'asst mngr',
+    employeeType: 'part-time',
+    status: 'active',
+    department: 'it',
+  }]
+
   return(
     <>
       <div style = {{padding: "100px"}}>
@@ -30,8 +52,11 @@ function App() {
           </tbody>
         </table>
       </div>
-      <EmployeeTable />
-      <ButtonContainer />
+      <div className='table-button-container'>
+        <EmployeeTable employees={employeesArray}/>
+        <ButtonContainer />
+      </div>
+      
     </>
     
   )
