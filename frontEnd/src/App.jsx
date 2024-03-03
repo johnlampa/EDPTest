@@ -60,7 +60,7 @@ function App() {
           <EmployeeTable employees={employees} setEmployees={setEmployees} addEmployeeVisibility={addEmployeeVisibility} setAddEmployeeVisibility={setAddEmployeeVisibility}/>
         </div>
         <div className='default-container'>
-          {addEmployeeVisibility && <AddEmployee></AddEmployee>}
+          {addEmployeeVisibility && <AddEmployee setAddEmployeeVisibility={setAddEmployeeVisibility}></AddEmployee>}
         </div>
       </div>
       
