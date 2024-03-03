@@ -10,7 +10,6 @@ table, th, td {
 .default-button {
   height: 30px;
   padding: 0px 6px;
-  border-radius: 5px;
 }
 
 .blue-button {
@@ -27,5 +26,15 @@ table, th, td {
   border: 2px solid #eb6500;
 }
 
+.table-button-container {
+  width: max-content;
+  text-align: center;
+}
 
-
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 55%;
+  margin-left: 22.5%;
+  margin-top: 20px;
+}
