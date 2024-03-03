@@ -1,6 +1,7 @@
-function EmployeeTable() {
+import PropTypes from 'prop-types';
+
+function EmployeeTable({ employees }) {
     return (
-        <>
         <table className="border-black border border-solid border-collapse">
             <thead>
                 <tr>
@@ -14,13 +15,26 @@ function EmployeeTable() {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th id="empty-list-label" colSpan={7} className="border-black border border-solid border-collapse" >No employees found</th>
-                </tr>
+                {employees.length > 0 ? (
+                    employees.map((employee, index) => (
+                        <tr key={index}>
+                            <td>{employee.employeeNo}</td>
+                            <td>{employee.name}</td>
+                            <td>{employee.address}</td>
+                            <td>{employee.designation}</td>
+                            <td>{employee.employeeType}</td>
+                            <td>{employee.status}</td>
+                            <td>{employee.department}</td>
+                        </tr>
+                    ))
+                ) : (
+                    <tr>
+                        <td id="empty-list-label" colSpan={7} className="border-black border border-solid border-collapse" >No employees found</td>
+                    </tr>
+                )}
             </tbody>
         </table>
-        </>
-    )
+    );
 }
 
-export default EmployeeTable
+export default EmployeeTable;
