@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useState} from 'react'
 import EmployeeTable from './components/EmployeeTable.jsx';
-import ButtonContainer from './components/ButtonContainer.jsx';
 import AddEmployee from './components/AddEmployee.jsx';
 
 function App() {
@@ -34,6 +33,8 @@ function App() {
     .catch(err => console.log(err));
   }, [])
 
+  const [addEmployeeVisibility, setAddEmployeeVisibility] = useState(false);
+
   return(
     <>
       <div style = {{padding: "100px"}}>
@@ -56,11 +57,10 @@ function App() {
       </div>
       <div className='default-container'>
         <div className='table-button-container'>
-          <EmployeeTable employees={employees} setEmployees={setEmployees}/>
-          <ButtonContainer />
+          <EmployeeTable employees={employees} setEmployees={setEmployees} addEmployeeVisibility={addEmployeeVisibility} setAddEmployeeVisibility={setAddEmployeeVisibility}/>
         </div>
         <div className='default-container'>
-          <AddEmployee></AddEmployee>
+          {addEmployeeVisibility && <AddEmployee></AddEmployee>}
         </div>
       </div>
       

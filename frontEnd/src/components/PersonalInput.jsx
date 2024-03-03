@@ -3,7 +3,11 @@ import InputBox from "./UI/InputBox"
 function PersonalInput() {
     return (
         <div className="flex left-align">
-            <p>2. Personal Details</p>
+            <p>1. Personal Details</p>
+            <div>
+                <p>(Employee Number)</p>
+                <InputBox label="Ex. 256"></InputBox>
+            </div>
             <div>
                 <p>(First Name)</p>
                 <InputBox label="Ex. Agustine"></InputBox>
