@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import PersonalInput from "./PersonalInput";
-import AddressInput from './AddressDetails.jsx';
-import WorkInput from './WorkDetails.jsx';
+import AddressInput from './AddressInput.jsx';
+import WorkInput from './WorkInput.jsx';
 import DefaultButton from "./UI/DefaultButton.jsx";
 
 function AddEmployee({setAddEmployeeVisibility}) {
