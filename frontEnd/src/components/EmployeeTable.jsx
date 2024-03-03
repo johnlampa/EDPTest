@@ -1,4 +1,4 @@
-function EmployeeTable() {
+function EmployeeTable(employeeData) {
     return (
         <>
         <table className="border-black border border-solid border-collapse">
