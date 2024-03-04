@@ -56,6 +56,7 @@ function AddEmployee({ setAddEmployeeVisibility, setEmployees }) {
     return (
         <div>
             <div className="add-employee-container">
+                <h1>Add Employee</h1>
                 <PersonalInput onPersonalChange={setPersonal} />
                 <AddressInput onAddressChange={setAddress}></AddressInput>
                 <WorkInput onTypeChange={setSelectedEmployeeType} onDesignationChange={setSelectedDesignation} onDepartmentChange={setSelectedDepartment}></WorkInput>

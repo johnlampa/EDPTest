@@ -31,7 +31,7 @@ function WorkInput({ onTypeChange, onDesignationChange, onDepartmentChange }) {
                 </select>
             </div>
             <div>
-                <p>(designation)</p>
+                <p>(Designation)</p>
                 <select id="designationName" onChange={handleSelectChange}>
                     <option value="0">Choose</option>
                     <option value="1">Manager</option>

@@ -1,8 +1,8 @@
 
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-import PersonalInput from "./PersonalInput";
-import AddressInput from './AddressInput.jsx';
+import EditPersonalInput from "./EditPersonalInput.jsx";
+import EditAddressInput from './EditAddressInput.jsx';
 import WorkInput from './WorkInput.jsx';
 import DefaultButton from "./UI/DefaultButton.jsx";
 
@@ -58,9 +58,10 @@ function EditEmployee({ editEmployeeVisibility, setEditEmployeeVisibility, setEm
     return (
         <div>
             <div className="add-employee-container">
-                <PersonalInput onPersonalChange={setPersonal} />
-                <AddressInput onAddressChange={setAddress}></AddressInput>
-                <WorkInput onTypeChange={setSelectedEmployeeType} onDesignationChange={setSelectedDesignation} onDepartmentChange={setSelectedDepartment}></WorkInput>
+                <h1>Edit Employee</h1>
+                <EditPersonalInput onPersonalChange={setPersonal} employee={employee}/>
+                <EditAddressInput onAddressChange={setAddress} employee={employee}/>
+                <WorkInput onTypeChange={setSelectedEmployeeType} onDesignationChange={setSelectedDesignation} onDepartmentChange={setSelectedDepartment}/>
                 <div onClick={handleAddEmployee}>
                     <DefaultButton label="Done"></DefaultButton>
                 </div>
