@@ -6,7 +6,9 @@ import AddressInput from './AddressInput.jsx';
 import WorkInput from './WorkInput.jsx';
 import DefaultButton from "./UI/DefaultButton.jsx";
 
-function EditEmployee({ setEditEmployeeVisibility, setEmployees }) {
+function EditEmployee({ editEmployeeVisibility, setEditEmployeeVisibility, setEmployees, employees}) {
+    const employee = employees[editEmployeeVisibility.index]
+
     const [personal, setPersonal] = useState({
         employeeNumber: "",
         firstName: "",
@@ -30,7 +32,7 @@ function EditEmployee({ setEditEmployeeVisibility, setEmployees }) {
     const [selectedDepartment, setSelectedDepartment] = useState('');
 
     const handleCancel = () => {
-        setEditEmployeeVisibility(false);
+        setEditEmployeeVisibility({visibility: false, index: -1});
     }
 
     const handleAddEmployee = () => {
@@ -50,7 +52,7 @@ function EditEmployee({ setEditEmployeeVisibility, setEmployees }) {
         };
 
         setEmployees(prevEmployees => [...prevEmployees, employee]);
-        setEditEmployeeVisibility(false);
+        setEditEmployeeVisibility({visibility: false, index: -1});
     }
 
     return (

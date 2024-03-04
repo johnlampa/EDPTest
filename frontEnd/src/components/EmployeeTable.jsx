@@ -39,10 +39,9 @@ function EmployeeTable({employees, setEmployees, addEmployeeVisibility, setAddEm
                                 <td>{employee.designationName}</td>
                                 <td>{employee.employeeType}</td>
                                 <td>{employee.departmentName}</td>
-                                {/* edit edit button functionality */}
                                 <td>
                                     <div className='edit-delete-buttons'>
-                                        <button className='edit-button' onClick={() => setEditEmployeeVisibility(true)}>Edit Details</button>
+                                        <button className='edit-button' onClick={() => setEditEmployeeVisibility({visibility: true, index: index})}>Edit Details</button>
                                         <button className='delete-button' onClick={() => handleDelete(index)}>Remove Employee</button>
                                     </div>
                                 </td>

@@ -49,7 +49,10 @@ function App() {
   }, [])
 
   const [addEmployeeVisibility, setAddEmployeeVisibility] = useState(false);
-  const [editEmployeeVisibility, setEditEmployeeVisibility] = useState(false);
+  const [editEmployeeVisibility, setEditEmployeeVisibility] = useState({
+    visibility: false,
+    index: -1
+  });
 
   return(
     <>
@@ -77,7 +80,7 @@ function App() {
         </div>
         <div className='default-container'>
           {addEmployeeVisibility && <AddEmployee setAddEmployeeVisibility={setAddEmployeeVisibility} setEmployees={setEmployees}></AddEmployee>}
-          {editEmployeeVisibility && <EditEmployee setEditEmployeeVisibility={setEditEmployeeVisibility} setEmployees={setEmployees}></EditEmployee>}
+          {editEmployeeVisibility.visibility && <EditEmployee editEmployeeVisibility={editEmployeeVisibility} setEditEmployeeVisibility={setEditEmployeeVisibility} setEmployees={setEmployees} employees={employees}></EditEmployee>}
         </div>
       </div>
       
