@@ -10,21 +10,21 @@ function EditEmployee({ editEmployeeVisibility, setEditEmployeeVisibility, setEm
     const employee = employees[editEmployeeVisibility.index] //stores the employee object. but it should be passed to the individual input boxes
 
     const [personal, setPersonal] = useState({
-        employeeNumber: "",
-        firstName: "",
-        middleName: "",
-        lastName: "",
-        contactInformation: ""
+        employeeNumber: employee.employeeNumber,
+        firstName: employee.firstName,
+        middleName: employee.middleName,
+        lastName: employee.lastName,
+        contactInformation: employee.contactInformation
     });
 
     const [address, setAddress] = useState({
-        houseNumber: "",
-        street: "",
-        barangay: "",
-        city: "",
-        province: "",
-        country: "",
-        zipcode: ""
+        houseNumber: employee.houseNumber,
+        street: employee.street,
+        barangay: employee.barangay,
+        city: employee.city,
+        province: employee.province,
+        country: employee.country,
+        zipcode: employee.zipcode
     });
 
     const [selectedEmployeeType, setSelectedEmployeeType] = useState('');
@@ -35,7 +35,7 @@ function EditEmployee({ editEmployeeVisibility, setEditEmployeeVisibility, setEm
         setEditEmployeeVisibility({visibility: false, index: -1});
     }
 
-    const handleAddEmployee = () => {
+    const handleEditEmployee = () => {
         console.log("Personal Object:", personal); // Display personal object to the console
         console.log("Address Object:", address);
         const work = {
@@ -44,17 +44,20 @@ function EditEmployee({ editEmployeeVisibility, setEditEmployeeVisibility, setEm
             departmentName: selectedDepartment
         }
         console.log("Work Object:", work)
-
-        const employee = {
+    
+        const updatedEmployee = {
             ...personal,
             ...address,
             ...work
         };
-
-        setEmployees(prevEmployees => [...prevEmployees, employee]);
-        setEditEmployeeVisibility({visibility: false, index: -1});
+    
+        const updatedEmployees = [...employees]; // Create a copy of the employees array
+        updatedEmployees[editEmployeeVisibility.index] = updatedEmployee; // Update the existing employee
+    
+        setEmployees(updatedEmployees); // Update the state with the modified employees array
+        setEditEmployeeVisibility({visibility: false, index: -1}); // Hide the edit form
     }
-
+    
     return (
         <div>
             <div className="add-employee-container">
@@ -62,7 +65,7 @@ function EditEmployee({ editEmployeeVisibility, setEditEmployeeVisibility, setEm
                 <EditPersonalInput onPersonalChange={setPersonal} employee={employee}/>
                 <EditAddressInput onAddressChange={setAddress} employee={employee}/>
                 <WorkInput onTypeChange={setSelectedEmployeeType} onDesignationChange={setSelectedDesignation} onDepartmentChange={setSelectedDepartment}/>
-                <div onClick={handleAddEmployee}>
+                <div onClick={handleEditEmployee}>
                     <DefaultButton label="Done"></DefaultButton>
                 </div>
                 <div onClick={handleCancel}>
