@@ -34,7 +34,7 @@ function PersonalInput({ onPersonalChange }) {
             </div>
             <div>
                 <p>(Contact Number)</p>
-                <InputBox label="Ex. 09228735874" onChange={(e) => handleInputChange(e, 'contactInformationr')} />
+                <InputBox label="Ex. 09228735874" onChange={(e) => handleInputChange(e, 'contactInformation')} />
             </div>
         </div>
     )
