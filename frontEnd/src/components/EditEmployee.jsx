@@ -7,7 +7,7 @@ import WorkInput from './WorkInput.jsx';
 import DefaultButton from "./UI/DefaultButton.jsx";
 
 function EditEmployee({ editEmployeeVisibility, setEditEmployeeVisibility, setEmployees, employees}) {
-    const employee = employees[editEmployeeVisibility.index]
+    const employee = employees[editEmployeeVisibility.index] //stores the employee object. but it should be passed to the individual input boxes
 
     const [personal, setPersonal] = useState({
         employeeNumber: "",
