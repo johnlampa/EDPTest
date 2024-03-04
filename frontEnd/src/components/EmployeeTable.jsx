@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import DefaultButton from './UI/DefaultButton';
-function EmployeeTable({employees, setEmployees, addEmployeeVisibility, setAddEmployeeVisibility}) {
+function EmployeeTable({employees, setEmployees, addEmployeeVisibility, setAddEmployeeVisibility, editEmployeeVisibility, setEditEmployeeVisibility}) {
     const handleAdd = (e, field) => {
         setAddEmployeeVisibility(true)
     };
@@ -10,6 +10,8 @@ function EmployeeTable({employees, setEmployees, addEmployeeVisibility, setAddEm
         updatedEmployees.splice(index, 1);
         setEmployees(updatedEmployees);
     };
+
+    
 
     return (
         <div>
@@ -40,7 +42,7 @@ function EmployeeTable({employees, setEmployees, addEmployeeVisibility, setAddEm
                                 {/* edit edit button functionality */}
                                 <td>
                                     <div className='edit-delete-buttons'>
-                                        <button className='edit-button'>Edit Details</button>
+                                        <button className='edit-button' onClick={() => setEditEmployeeVisibility(true)}>Edit Details</button>
                                         <button className='delete-button' onClick={() => handleDelete(index)}>Remove Employee</button>
                                     </div>
                                 </td>

@@ -2,6 +2,7 @@
 import { useEffect, useState} from 'react'
 import EmployeeTable from './components/EmployeeTable.jsx';
 import AddEmployee from './components/AddEmployee.jsx';
+import EditEmployee from './components/EditEmployee.jsx';
 
 function App() {
   //source should be database
@@ -48,6 +49,7 @@ function App() {
   }, [])
 
   const [addEmployeeVisibility, setAddEmployeeVisibility] = useState(false);
+  const [editEmployeeVisibility, setEditEmployeeVisibility] = useState(false);
 
   return(
     <>
@@ -71,10 +73,11 @@ function App() {
       </div>
       <div className='default-container'>
         <div className='table-button-container'>
-          <EmployeeTable employees={employees} setEmployees={setEmployees} addEmployeeVisibility={addEmployeeVisibility} setAddEmployeeVisibility={setAddEmployeeVisibility}/>
+          <EmployeeTable employees={employees} setEmployees={setEmployees} addEmployeeVisibility={addEmployeeVisibility} setAddEmployeeVisibility={setAddEmployeeVisibility} editEmployeeVisibility={editEmployeeVisibility} setEditEmployeeVisibility={setEditEmployeeVisibility}/>
         </div>
         <div className='default-container'>
           {addEmployeeVisibility && <AddEmployee setAddEmployeeVisibility={setAddEmployeeVisibility} setEmployees={setEmployees}></AddEmployee>}
+          {editEmployeeVisibility && <EditEmployee setEditEmployeeVisibility={setEditEmployeeVisibility} setEmployees={setEmployees}></EditEmployee>}
         </div>
       </div>
       
