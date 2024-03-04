@@ -1,4 +1,16 @@
-function EmployeeTable() {
+import PropTypes from 'prop-types';
+import DefaultButton from './UI/DefaultButton';
+function EmployeeTable({employees, setEmployees, addEmployeeVisibility, setAddEmployeeVisibility}) {
+    const handleAdd = (e, field) => {
+        setAddEmployeeVisibility(true)
+    };
+
+    const handleDelete = (index) => {
+        const updatedEmployees = [...employees];
+        updatedEmployees.splice(index, 1);
+        setEmployees(updatedEmployees);
+    };
+
     return (
         <div>
             <table className="border-black border border-solid border-collapse">

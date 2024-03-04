@@ -1,5 +1,5 @@
-import InputBox from "./UI/InputBox"
-import { useState} from 'react'
+import InputBox from "./UI/InputBox";
+import { useState, useEffect } from 'react';
 
 function PersonalInput() {
     const [personal, setPersonal] = useState({
@@ -16,9 +16,11 @@ function PersonalInput() {
             ...prevPersonal,
             [field]: value
         }));
-
-        console.log(personal); // Display current personal object
     };
+
+    useEffect(() => {
+        console.log(personal); // Display updated personal object
+    }, [personal]);
 
     return (
         <div className="flex left-align">

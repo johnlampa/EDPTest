@@ -14,13 +14,12 @@ function AddressInput() {
 
     const handleInputChange = (e, field) => {
         const value = e.target.value;
-        setAddress(prevAddress => ({
-            ...prevAddress,
-            [field]: value
-        }));
-
-        console.log(address)
-    }
+        setAddress((prevAddress) => {
+            const updatedAddress = { ...prevAddress, [field]: value };
+            console.log(updatedAddress); // Log the updated address immediately
+            return updatedAddress;
+        });
+    };
 
     return (
         <div className="flex left-align">
