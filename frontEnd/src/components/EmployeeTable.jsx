@@ -11,7 +11,9 @@ function EmployeeTable({employees, setEmployees, addEmployeeVisibility, setAddEm
         setEmployees(updatedEmployees);
     };
 
-    
+    const employeeType = ["Regular", "Part-time", "Probation"];
+    const designationName = ["Manager", "Asst. Manager", "Staff"];
+    const departmentName = ["Administration", "HR", "Marketing", "Accounting", "IT"];
 
     return (
         <div>
@@ -36,9 +38,9 @@ function EmployeeTable({employees, setEmployees, addEmployeeVisibility, setAddEm
                                 <td>{employee.firstName + " " + employee.middleName + " " + employee.lastName}</td>
                                 <td>{employee.contactInformation}</td>
                                 <td>{employee.houseNumber + ', ' + employee.street  + ', ' + employee.barangay + ', ' + employee.city + ', ' + employee.province + ', ' + employee.country + ', ' + employee.zipcode}</td>
-                                <td>{employee.designationName}</td>
-                                <td>{employee.employeeType}</td>
-                                <td>{employee.departmentName}</td>
+                                <td>{designationName[parseInt(employee.designationName) - 1]}</td>
+                                <td>{employeeType[parseInt(employee.employeeType) - 1]}</td>
+                                <td>{departmentName[parseInt(employee.departmentName) - 1]}</td>
                                 <td>
                                     <div className='edit-delete-buttons'>
                                         <button className='edit-button' onClick={() => setEditEmployeeVisibility({visibility: true, index: index})}>Edit Details</button>

@@ -27,9 +27,9 @@ function EditEmployee({ editEmployeeVisibility, setEditEmployeeVisibility, setEm
         zipcode: employee.zipcode
     });
 
-    const [selectedEmployeeType, setSelectedEmployeeType] = useState('');
-    const [selectedDesignation, setSelectedDesignation] = useState('');
-    const [selectedDepartment, setSelectedDepartment] = useState('');
+    const [selectedEmployeeType, setSelectedEmployeeType] = useState(employee.employeeType);
+    const [selectedDesignation, setSelectedDesignation] = useState(employee.designationName);
+    const [selectedDepartment, setSelectedDepartment] = useState(employee.departmentName);
 
     const handleCancel = () => {
         setEditEmployeeVisibility({visibility: false, index: -1});

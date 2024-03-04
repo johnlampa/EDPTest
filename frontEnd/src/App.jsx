@@ -19,9 +19,9 @@ function App() {
     province: 'davao del sur',
     country: 'philippines',
     zipcode: '8000',
-    designationName: 'mngr',
-    employeeType: 'regular',
-    departmentName: 'hr',
+    designationName: 1,
+    employeeType: 2,
+    departmentName: 4,
   }, {
     employeeNumber: '320',
     firstName: 'a',
@@ -35,9 +35,9 @@ function App() {
     province: 'davao del sur',
     country: 'philippines',
     zipcode: '8000',
-    designationName: 'mngr',
-    employeeType: 'regular',
-    departmentName: 'hr',
+    designationName: 3,
+    employeeType: 1,
+    departmentName: 2,
   }]);
 
   const [data, setData] = useState([])
