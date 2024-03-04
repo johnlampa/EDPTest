@@ -7,22 +7,15 @@ function WorkInput({ onTypeChange, onDesignationChange, onDepartmentChange }) {
             case 'employeeType':
                 onTypeChange(value);
                 break;
-            case 'designation':
+            case 'designationName':
                 onDesignationChange(value);
                 break;
-            case 'department':
+            case 'departmentName':
                 onDepartmentChange(value);
                 break;
             default:
                 break;
         }
-    };
-
-    const handleSubmit = () => {
-        console.log('Employee Type:', selectedEmployeeType);
-        console.log('designation:', selectedDesignation);
-        console.log('Department:', selectedDepartment);
-        // You can perform any further actions with the selected values here
     };
 
     return (
@@ -39,7 +32,7 @@ function WorkInput({ onTypeChange, onDesignationChange, onDepartmentChange }) {
             </div>
             <div>
                 <p>(designation)</p>
-                <select id="designation" onChange={handleSelectChange}>
+                <select id="designationName" onChange={handleSelectChange}>
                     <option value="0">Choose</option>
                     <option value="1">Manager</option>
                     <option value="2">Asst. Manager</option>
@@ -48,7 +41,7 @@ function WorkInput({ onTypeChange, onDesignationChange, onDepartmentChange }) {
             </div>
             <div>
                 <p>(Department)</p>
-                <select id="department" onChange={handleSelectChange}>
+                <select id="departmentName" onChange={handleSelectChange}>
                     <option value="0">Choose</option>
                     <option value="1">Administration</option>
                     <option value="2">HR</option>

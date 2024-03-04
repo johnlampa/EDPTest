@@ -12,7 +12,7 @@ function AddEmployee({ setAddEmployeeVisibility }) {
         firstName: "",
         middleName: "",
         lastName: "",
-        contactNumber: ""
+        contactInformation: ""
     });
 
     const [address, setAddress] = useState({
@@ -38,8 +38,8 @@ function AddEmployee({ setAddEmployeeVisibility }) {
         console.log("Address Object:", address);
         const work = {
             employeeType: selectedEmployeeType,
-            designation: selectedDesignation,
-            department: selectedDepartment
+            designationName: selectedDesignation,
+            departmentName: selectedDepartment
         }
         console.log("Work Object:", work)
     }
