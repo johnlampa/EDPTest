@@ -26,7 +26,7 @@ function AddEmployee({ setAddEmployeeVisibility }) {
     });
 
     const [selectedEmployeeType, setSelectedEmployeeType] = useState('');
-    const [selectedStatus, setSelectedStatus] = useState('');
+    const [selectedDesignation, setSelectedDesignation] = useState('');
     const [selectedDepartment, setSelectedDepartment] = useState('');
 
     const handleCancel = () => {
@@ -38,7 +38,7 @@ function AddEmployee({ setAddEmployeeVisibility }) {
         console.log("Address Object:", address);
         const work = {
             employeeType: selectedEmployeeType,
-            status: selectedStatus,
+            designation: selectedDesignation,
             department: selectedDepartment
         }
         console.log("Work Object:", work)
@@ -49,7 +49,7 @@ function AddEmployee({ setAddEmployeeVisibility }) {
             <div className="add-employee-container">
                 <PersonalInput onPersonalChange={setPersonal} />
                 <AddressInput onAddressChange={setAddress}></AddressInput>
-                <WorkInput onTypeChange={setSelectedEmployeeType} onStatusChange={setSelectedStatus} onDepartmentChange={setSelectedDepartment}></WorkInput>
+                <WorkInput onTypeChange={setSelectedEmployeeType} onDesignationChange={setSelectedDesignation} onDepartmentChange={setSelectedDepartment}></WorkInput>
                 <div onClick={handleAddEmployee}>
                     <DefaultButton label="Add Employee"></DefaultButton>
                 </div>

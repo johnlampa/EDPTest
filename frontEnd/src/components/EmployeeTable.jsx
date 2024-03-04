@@ -22,7 +22,6 @@ function EmployeeTable({employees, setEmployees, addEmployeeVisibility, setAddEm
                         <th className="border-black border border-solid border-collapse">Address</th>
                         <th className="border-black border border-solid border-collapse">Designation</th>
                         <th className="border-black border border-solid border-collapse">Employee Type</th>
-                        <th className="border-black border border-solid border-collapse">Status</th>
                         <th className="border-black border border-solid border-collapse">Department</th>
                         <th className="border-black border border-solid border-collapse">Actions</th>
                     </tr>
@@ -31,14 +30,13 @@ function EmployeeTable({employees, setEmployees, addEmployeeVisibility, setAddEm
                     {employees.length > 0 ? (
                         employees.map((employee, index) => (
                             <tr key={index}>
-                                <td>{employee.employeeNo}</td>
+                                <td>{employee.employeeNumber}</td>
                                 <td>{employee.firstName + " " + employee.middleName + " " + employee.lastName}</td>
-                                <td>{employee.contact}</td>
-                                <td>{employee.address}</td>
-                                <td>{employee.designation}</td>
+                                <td>{employee.contactInformation}</td>
+                                <td>{employee.houseNumber + ', ' + employee.street  + ', ' + employee.barangay + ', ' + employee.city + ', ' + employee.province + ', ' + employee.country + ', ' + employee.zipcode}</td>
+                                <td>{employee.designationName}</td>
                                 <td>{employee.employeeType}</td>
-                                <td>{employee.status}</td>
-                                <td>{employee.department}</td>
+                                <td>{employee.departmentName}</td>
                                 {/* edit edit button functionality */}
                                 <td>
                                     <div className='edit-delete-buttons'>
