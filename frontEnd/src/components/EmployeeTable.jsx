@@ -32,7 +32,7 @@ function EmployeeTable({employees, setEmployees, addEmployeeVisibility, setAddEm
                         employees.map((employee, index) => (
                             <tr key={index}>
                                 <td>{employee.employeeNo}</td>
-                                <td>{employee.name}</td>
+                                <td>{employee.firstName + " " + employee.middleName + " " + employee.lastName}</td>
                                 <td>{employee.contact}</td>
                                 <td>{employee.address}</td>
                                 <td>{employee.designation}</td>

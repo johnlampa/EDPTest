@@ -1,21 +1,17 @@
 import React, { useState } from 'react';
 
-function WorkInput() {
-    const [selectedEmployeeType, setSelectedEmployeeType] = useState('');
-    const [selectedStatus, setSelectedStatus] = useState('');
-    const [selectedDepartment, setSelectedDepartment] = useState('');
-
+function WorkInput({ onTypeChange, onStatusChange, onDepartmentChange }) {
     const handleSelectChange = (e) => {
         const { id, value } = e.target;
         switch (id) {
             case 'employeeType':
-                setSelectedEmployeeType(value);
+                onTypeChange(value);
                 break;
             case 'status':
-                setSelectedStatus(value);
+                onStatusChange(value);
                 break;
             case 'department':
-                setSelectedDepartment(value);
+                onDepartmentChange(value);
                 break;
             default:
                 break;
@@ -61,7 +57,6 @@ function WorkInput() {
                     <option value="5">IT</option>
                 </select>
             </div>
-            <button onClick={handleSubmit}>Submit</button>
         </div>
     );
 }

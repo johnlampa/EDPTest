@@ -3,7 +3,6 @@ import InputBox from "./UI/InputBox";
 import { useEffect } from 'react';
 
 function PersonalInput({ onPersonalChange }) {
-    // No state here, it will be managed by AddEmployee
     const handleInputChange = (e, field) => {
         const value = e.target.value;
         onPersonalChange(prevPersonal => ({

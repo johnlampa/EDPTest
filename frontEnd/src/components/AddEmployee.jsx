@@ -15,21 +15,41 @@ function AddEmployee({ setAddEmployeeVisibility }) {
         contactNumber: ""
     });
 
+    const [address, setAddress] = useState({
+        houseNumber: "",
+        street: "",
+        barangay: "",
+        city: "",
+        province: "",
+        country: "",
+        zipcode: ""
+    });
+
+    const [selectedEmployeeType, setSelectedEmployeeType] = useState('');
+    const [selectedStatus, setSelectedStatus] = useState('');
+    const [selectedDepartment, setSelectedDepartment] = useState('');
+
     const handleCancel = () => {
         setAddEmployeeVisibility(false);
     }
 
     const handleAddEmployee = () => {
         console.log("Personal Object:", personal); // Display personal object to the console
-        // Add logic to process the personal object or send it to the server
+        console.log("Address Object:", address);
+        const work = {
+            employeeType: selectedEmployeeType,
+            status: selectedStatus,
+            department: selectedDepartment
+        }
+        console.log("Work Object:", work)
     }
 
     return (
         <div>
             <div className="add-employee-container">
                 <PersonalInput onPersonalChange={setPersonal} />
-                <AddressInput></AddressInput>
-                <WorkInput></WorkInput>
+                <AddressInput onAddressChange={setAddress}></AddressInput>
+                <WorkInput onTypeChange={setSelectedEmployeeType} onStatusChange={setSelectedStatus} onDepartmentChange={setSelectedDepartment}></WorkInput>
                 <div onClick={handleAddEmployee}>
                     <DefaultButton label="Add Employee"></DefaultButton>
                 </div>

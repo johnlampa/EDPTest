@@ -7,7 +7,9 @@ function App() {
   //source should be database
   const [employees, setEmployees] = useState([{
     employeeNo: '320',
-    name: 'jkrl',
+    firstName: 'j',
+    middleName: 'k',
+    lastName: 'rl',
     contact: '0922',
     address: 'mandug',
     designation: 'mngr',
@@ -16,7 +18,9 @@ function App() {
     department: 'hr',
   }, {
     employeeNo: '320',
-    name: 'adgr',
+    firstName: 'a',
+    middleName: 'd',
+    lastName: 'gr',
     contact: '0928',
     address: 'quirino',
     designation: 'asst mngr',
