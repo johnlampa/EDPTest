@@ -6,7 +6,7 @@ import AddressInput from './AddressInput.jsx';
 import WorkInput from './WorkInput.jsx';
 import DefaultButton from "./UI/DefaultButton.jsx";
 
-function AddEmployee({ setAddEmployeeVisibility }) {
+function AddEmployee({ setAddEmployeeVisibility, setEmployees }) {
     const [personal, setPersonal] = useState({
         employeeNumber: "",
         firstName: "",
@@ -42,6 +42,15 @@ function AddEmployee({ setAddEmployeeVisibility }) {
             departmentName: selectedDepartment
         }
         console.log("Work Object:", work)
+
+        const employee = {
+            ...personal,
+            ...address,
+            ...work
+        };
+
+        setEmployees(prevEmployees => [...prevEmployees, employee]);
+        setAddEmployeeVisibility(false);
     }
 
     return (
